@@ -15,17 +15,14 @@
 <h1 style="color:#FFFFFF">Product Form</h1>
 </center>
 <fieldset>
-			<!-- Text input-->
+		
 		<div class="form-group">
-					<label class="col-md-4 control-label" for="requestName" style="color:#FFFFFF">ProductId</label>
-					<div class="col-md-4">
-					<form:input class="form-control input-md" path="ProductId" ></form:input>
-					</div>
-					</div>
-
-				<!-- Text input-->
+				<label class="col-md-4 control-label" for="requestName" style="color:#FFFFFF">ProductId</label>
+				<div class="col-md-4">
+				<form:input class="form-control input-md" path="ProductId" ></form:input>
+				</div>
+				</div>
 				
-
 	    <div class="form-group">
 				<label class="col-md-4 control-label" for="comments" style="color:#FFFFFF">ProductName</label>
 				<div class="col-md-4">
@@ -34,24 +31,21 @@
 				</div>
 				
 		<div class="form-group">
-				<label class="col-md-4 control-label" for="comments" style="color:#FFFFFF">ProductDescription
-				</label>
+				<label class="col-md-4 control-label" for="comments" style="color:#FFFFFF">ProductDescription</label>
 				<div class="col-md-4">
 				<form:textarea class="form-control" path="ProductDescription" />
 				</div>
 				</div>
 		<div class="form-group">
-				<label class="col-md-4 control-label" for="comments" style="color:#FFFFFF">ProductPrice
-				</label>
+				<label class="col-md-4 control-label" for="comments" style="color:#FFFFFF">ProductPrice</label>
 				<div class="col-md-4">
 				<form:input class="form-control" path="ProductPrice" />
 				</div>
 				</div>
 				
 				
-				<div class="form-group">
-				<label class="col-md-4 control-label" for="comments" style="color:#FFFFFF">Category Name
-				</label>
+		<div class="form-group">
+				<label class="col-md-4 control-label" for="comments" style="color:#FFFFFF">Category Name</label>
 				<div class="col-md-4">
 				<form:select class="form-control" path="catId" >
 				<form:option value="-1"> select category name</form:option>
@@ -63,9 +57,8 @@
 				</div>
 				
 				
-				<div class="form-group">
-				<label class="col-md-4 control-label" for="comments" style="color:#FFFFFF">Supplier Name
-				</label>
+		<div class="form-group">
+				<label class="col-md-4 control-label" for="comments" style="color:#FFFFFF">Supplier Name</label>
 				<div class="col-md-4">
 				<form:select class="form-control" path="supId" >
 				<form:option value="-1"> select supplier name</form:option>
@@ -76,7 +69,7 @@
 				</div>
 				</div>
 				
-				<div class="form-group">
+		<div class="form-group">
 				<label class="col-md-4 control-label" for="comments" style="color:#FFFFFF ">Upload Image</label>
 				<div class="col-md-4">
 				<form:input type="file" path="pImage" />
@@ -85,12 +78,13 @@
 				
 				
 				
-                    <div class="form-group">
+        <div class="form-group">
 					<label class="col-md-4 control-label" for="submit" style="color:#FFFFFF"></label>
 					<div class="col-md-4">
-					<input type="submit" class="btn btn-lg btn-info" value="submit"></input>
+					<input type="submit" class="btn btn-lg btn-info" value="${bname}"></input>
 					</div>
 				    </div>
+	 </fieldset>
 </form:form>
 
 <table class="table table-bordered table-hover table-striped">
@@ -111,13 +105,12 @@
                 <td>${product.supId}</td>
                 <td> ${product.catId}</td>
                 <td> ${product.productPrice}</td>
-                <td><a href="UpdateAdmprod?adpid=${product.productId}">Edit</a></td>
-                <td><a href="deleteprod?delpid=${product.productId}">Delete</a></td>
+                <td><a href="updateprod?prodid=${product.productId}">Edit</a></td>
+                <td><a href="deleteprod?prodid=${product.productId}">Delete</a></td>
                 <td><img src="./resources/images/${product.productId}.jpg" height="50px" width="50px"/></td> 
 
 </tr>
 </core:forEach>
-
 </table>
 
 </body>

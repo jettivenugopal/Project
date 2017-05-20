@@ -11,6 +11,7 @@ import org.hibernate.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.eshop.model.CategoryDetails;
 import com.eshop.model.ProductDetails;
 
 @Repository
@@ -22,9 +23,9 @@ public class ProductDao {
 	{
 		Session session=sessionFactory.openSession();
 		Transaction t=session.beginTransaction();
-		session.save(pd);
+		session.saveOrUpdate(pd);
 		t.commit();
-}
+     }
 	
 	public  List product()
 	{
@@ -33,7 +34,6 @@ public class ProductDao {
 		String hql="from ProductDetails ";
 		Query query = session.createQuery(hql);
 		List r = query.list(); 
-	
 		return r;	
 	}
 	public  void Deleteproduct(int productid)
@@ -44,11 +44,17 @@ public class ProductDao {
 		session.delete(p);
 		t.commit();
 		session.close();
+	}
 	
-		return ;	
-		
+	public ProductDetails getproduct(int prodid)
+	{
+		Session session=sessionFactory.openSession();
+		Transaction t=session.beginTransaction();
+		ProductDetails p=(ProductDetails)session.get(ProductDetails.class,prodid);
+	    return p;
 	}
-
-	}
+	
+	
+}
 
 

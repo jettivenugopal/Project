@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.eshop.model.CategoryDetails;
+import com.eshop.model.ProductDetails;
 
 @Repository
 public class CatDao {
@@ -21,9 +22,9 @@ public class CatDao {
 	{
 		Session session=sessionFactory.openSession();
 		Transaction t=session.beginTransaction();
-		session.save(cd);
+		session.saveOrUpdate( cd);
 		t.commit();
-}
+    }
 	public  List prodcat()
 	{
 		Session session=sessionFactory.openSession();
@@ -31,7 +32,25 @@ public class CatDao {
 		String hql="from CategoryDetails ";
 		Query query = session.createQuery(hql);
 		List r = query.list(); 
-	
 		return r;	
 	}
+	
+	public  void Deletecategory(int cid)
+	{
+		Session session=sessionFactory.openSession();
+		Transaction t=session.beginTransaction();
+		CategoryDetails c=(CategoryDetails)session.get(CategoryDetails.class,cid);
+		session.delete(c);
+		t.commit();
+		session.close();
+	}
+	
+	public CategoryDetails getcategory(int catid)
+	{
+		Session session=sessionFactory.openSession();
+		Transaction t=session.beginTransaction();
+		CategoryDetails c=(CategoryDetails)session.get(CategoryDetails.class,catid);
+	    return c;
+	}
 }
+	

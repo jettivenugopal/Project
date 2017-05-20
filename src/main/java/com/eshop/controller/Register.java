@@ -20,25 +20,23 @@ public class Register {
 	@RequestMapping(value="/home", method=RequestMethod.GET)
 	public String ind()
 	{	
-
-	return "index1";
+	   return "index1";
 	}
 	
-
 	@RequestMapping(value="/reg", method=RequestMethod.GET)
 	public ModelAndView reg1()
 	{	
-	UserDetails u=new UserDetails();
-	ModelAndView mv=new ModelAndView("register","UserDetails", u);
-	return mv;
+	   UserDetails u=new UserDetails();
+	   ModelAndView mv=new ModelAndView("register","UserDetails", u);
+	   return mv;
 	}
 	@RequestMapping(value="/register", method=RequestMethod.POST)
 	public ModelAndView reg2(@ModelAttribute("UserDetails")UserDetails u)
 	{	
-	//UserDetails u=new UserDetails();
-	rd.insertuser(u);	
-	ModelAndView mv=new ModelAndView("register1","UserDetails", u);
-	return mv;
+	   //UserDetails u=new UserDetails();
+	   rd.insertuser(u);	
+	   ModelAndView mv=new ModelAndView("register1","UserDetails", u);
+	   return mv;
 	}
 
 	

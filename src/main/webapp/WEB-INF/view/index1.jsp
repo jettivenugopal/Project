@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
- 
-</head>
 <body>
 <%@ include file="userHeader.jsp" %>
 <div class="container">
@@ -19,37 +17,37 @@
 
    
     <div class="carousel-inner">
-      <div class="item active">
+        <div class="item active">
         <img src="resources/1.jpg" alt="Los Angeles" style="width:100%;">
-      </div>
+        </div>
 
-      <div class="item">
+        <div class="item">
         <img src="resources/2.jpg" alt="Chicago" style="width:100%;">
-      </div>
+        </div>
     
-      <div class="item">
+        <div class="item">
         <img src="resources/3.jpg" alt="New york" style="width:100%;">
-      </div>
+        </div>
       
-      <div class="item">
+        <div class="item">
         <img src="resources/4.jpg" alt="New york" style="width:100%;">
-      </div>
+        </div>
       
-      <div class="item">
+        <div class="item">
         <img src="resources/5.jpg" alt="New york" style="width:100%;">
-      </div>
-    </div>
+        </div>
+        </div>
 
     
     <a class="left carousel-control" href="#myCarousel" data-slide="prev">
       <span class="glyphicon glyphicon-chevron-left"></span>
       <span class="sr-only">Previous</span>
-    </a>
+      </a>
     <a class="right carousel-control" href="#myCarousel" data-slide="next">
       <span class="glyphicon glyphicon-chevron-right"></span>
       <span class="sr-only">Next</span>
-    </a>
-  </div>
+      </a>
+ </div>
 </div>
 
 </body>

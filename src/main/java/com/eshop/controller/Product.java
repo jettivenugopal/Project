@@ -2,8 +2,8 @@ package com.eshop.controller;
 
 import java.io.BufferedOutputStream;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
@@ -58,24 +58,24 @@ public class Product {
 		mv.addObject("catData",l);
 		mv.addObject("supData",l1);
 		mv.addObject("prodData",l2);
+		mv.addObject("bname","AddCategory");
 		return mv;
 	}
 	@RequestMapping(value="/pro", method=RequestMethod.POST)
 	public ModelAndView product(@ModelAttribute("ProductDetails")ProductDetails p)
 	{
-		List l=cd.prodcat();
-		List l1=sd.prodsup();
-		List l2=pd.product();
 		
 		pd.insertpro(p);
+		
 		ProductDetails p1=new ProductDetails();
 	    ModelAndView mv=new ModelAndView("pro","ProductDetails",p1);
-	    
+	    List l=cd.prodcat();
+		List l1=sd.prodsup();
+		List l2=pd.product();
 	    mv.addObject("catData",l);
 		mv.addObject("supData",l1);
 		mv.addObject("prodData",l2);
-		
-		
+		mv.addObject("bname","AddCategory");
 		String path="D:\\Project\\ekart\\src\\main\\webapp\\resources\\images\\";
 		path=path+String.valueOf(p.getProductId()+".jpg");
 		MultipartFile filedata=p.getpImage();
@@ -98,38 +98,57 @@ public class Product {
 	
 	
 	@RequestMapping("/deleteprod")
-	public ModelAndView deleteProduct(@RequestParam("delpid")int pid)
+	public ModelAndView deleteProduct(@RequestParam("prodid")int pid)
 	{
-		
-		
-		List l=cd.prodcat();
-		List l1=sd.prodsup();
-		List l2=pd.product();
 		
 		pd.Deleteproduct(pid);
 		ProductDetails p1=new ProductDetails();
 	    ModelAndView mv=new ModelAndView("pro","ProductDetails",p1);
-	    
+
+		List l=cd.prodcat();
+		List l1=sd.prodsup();
+		List l2=pd.product();
 	    mv.addObject("catData",l);
 		mv.addObject("supData",l1);
 		mv.addObject("prodData",l2);
-		
+		mv.addObject("bname","AddCategory");
 		System.out.println("delete Successfully");
 		return mv;
-}
+    }
 	
+	@RequestMapping(value="/updateprod", method=RequestMethod.GET)
+	ModelAndView Editproduct(@RequestParam("prodid")int prodid)
+	{		
+	   ProductDetails p=pd.getproduct(prodid);
+	   ModelAndView mv=new ModelAndView("pro","ProductDetails", p);
+	    List l=cd.prodcat();
+		List l1=sd.prodsup();
+		List l2=pd.product();
+	    mv.addObject("catData",l);
+		mv.addObject("supData",l1);
+		mv.addObject("prodData",l2);
+	   mv.addObject("bname","UpdateCategory");
+	   return mv;
+	}
+	@RequestMapping(value="/userpro", method=RequestMethod.GET)
+	public ModelAndView userproduct()
+	{
+		ProductDetails p1=new ProductDetails();
+		List l=pd.product();
+	    ModelAndView mv=new ModelAndView("userproduct","ProductDetails",p1);
+	    mv.addObject("prodData",l);
+		return mv;
+	}
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	@RequestMapping(value="/image", method=RequestMethod.GET)
+	public ModelAndView Image(@RequestParam("img")int productId)
+	{		
+	    ProductDetails p=pd.getproduct(productId);
+	    
+		List l=new ArrayList();
+		l.add(p);
+		ModelAndView mv=new ModelAndView("single","ProductDetails", l);
+	  
+	   return mv;
+	}
 }

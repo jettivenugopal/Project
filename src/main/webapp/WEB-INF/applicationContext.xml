@@ -10,7 +10,6 @@
         http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
         http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd">
  
- <!--  -->
     <beans:bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
         <beans:property name="driverClassName" value="org.h2.Driver" />
         <beans:property name="url" value="jdbc:h2:tcp://localhost/~/Project" />
@@ -18,13 +17,13 @@
         <beans:property name="password" value="venu" />
     </beans:bean>
  
- <context:component-scan base-package="com.eshop" />
+     <context:component-scan base-package="com.eshop" />
     <!-- Hibernate 4 SessionFactory Bean definition -->
  
     <beans:bean id="sessionFactory"  class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
         <beans:property name="dataSource" ref="dataSource" />              
         <beans:property name="hibernateProperties">
-            <beans:props>
+           <beans:props>
                 <beans:prop key="hibernate.dialect">org.hibernate.dialect.H2Dialect</beans:prop>
                 <beans:prop key="hibernate.show_sql">true</beans:prop>
                 <beans:prop key="hibernate.hbm2ddl.auto">update</beans:prop>              
@@ -33,12 +32,12 @@
        
        <beans:property name="packagesToScan">
            <beans:list><beans:value>com.eshop.model</beans:value></beans:list>      
-        </beans:property>
+       </beans:property>
     </beans:bean>
   
   
     
-    <beans:bean id="transactionManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+     <beans:bean id="transactionManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
      <beans:property name="sessionFactory" ref="sessionFactory" />
     </beans:bean>
   

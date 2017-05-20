@@ -24,7 +24,7 @@ public class CategoryDetails  implements Serializable{
 	
 
 	@Column(name = "CategoryDescription")
-	private String CategoryDescription;
+	private String categoryDescription;
 
 
 	public int getCategoryId() {
@@ -48,13 +48,14 @@ public class CategoryDetails  implements Serializable{
 
 
 	public String getCategoryDescription() {
-		return CategoryDescription;
+		return categoryDescription;
 	}
 
 
 	public void setCategoryDescription(String categoryDescription) {
-		CategoryDescription = categoryDescription;
+		this.categoryDescription = categoryDescription;
 	}
+
 
 
 	

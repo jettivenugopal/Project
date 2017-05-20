@@ -16,15 +16,8 @@ public class RegDao {
 	public void insertuser(UserDetails ud)
 	{
 		Session session=sessionFactory.openSession();
-		
 		Transaction t=session.beginTransaction();
-		
 		session.save(ud);
-		t.commit();
-		
-		
-		
+		t.commit();	
 	}
-	
-
 }

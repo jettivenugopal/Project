@@ -19,19 +19,17 @@ public class Admin {
 	@RequestMapping(value="/admn", method=RequestMethod.GET)
 	public ModelAndView adm()
 	{	
-	AdminDetails a=new AdminDetails();
-	ModelAndView mv=new ModelAndView("admin","AdminDetails", a);
-	return mv;
+	    AdminDetails a=new AdminDetails();
+	    ModelAndView mv=new ModelAndView("admin","AdminDetails", a);
+	    return mv;
 	}
 	
 	@RequestMapping(value="/admin", method=RequestMethod.POST)
 	public ModelAndView adm1(@ModelAttribute("AdminDetails")AdminDetails a)
 	{	
-	//UserDetails u=new UserDetails();
-	ad.insertuser(a);	
-	ModelAndView mv=new ModelAndView("admin","AdminDetails", a);
-	return mv;
+	    //UserDetails u=new UserDetails();
+	    ad.insertuser(a);	
+	    ModelAndView mv=new ModelAndView("admin","AdminDetails", a);
+	    return mv;
 	}
-	
-
 }

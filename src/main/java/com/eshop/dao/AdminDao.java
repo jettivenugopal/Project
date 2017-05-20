@@ -16,12 +16,8 @@ public class AdminDao {
 	public void insertuser(AdminDetails ad)
 	{
 		Session session=sessionFactory.openSession();
-		
 		Transaction t=session.beginTransaction();
-		
 		session.save(ad);
-		t.commit();
-		
-		
+		t.commit();	
 	}
 }
