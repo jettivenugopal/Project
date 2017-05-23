@@ -23,6 +23,8 @@ public class SupDao {
 		Transaction t=session.beginTransaction();
 		session.saveOrUpdate(sd);
 		t.commit();
+		session.close();
+		
     }
 	public  List prodsup()
 	{ 
@@ -31,6 +33,7 @@ public class SupDao {
 		String hql="from SupplierDetails ";
 		Query query = session.createQuery(hql);
 		List r = query.list(); 
+		session.close();
 		return r;
 	}
 	
@@ -49,6 +52,7 @@ public class SupDao {
 		Session session=sessionFactory.openSession();
 		Transaction t=session.beginTransaction();
 		SupplierDetails s=(SupplierDetails)session.get(SupplierDetails.class,supid);
+		session.close();
 	    return s;
 	}
 }

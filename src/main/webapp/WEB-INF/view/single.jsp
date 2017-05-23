@@ -21,7 +21,9 @@
 <th>Supplier Id</th>
 <th>Category Id</th>
 <th>Price</th>
+<th>Stock</th>
 <th>Image</th>
+<th>Add Cart</th>
 </tr> 
 <core:forEach items="${ProductDetails}" var="product">
 <tr class="success" >
@@ -31,8 +33,9 @@
                 <td>${product.supId}</td>
                 <td> ${product.catId}</td>
                 <td> ${product.productPrice}</td>
-               
+                <td>${product.productStock}</td>
                 <td><img src="./resources/images/${product.productId}.jpg" height="200px" width="150px"/></td>
+                <td><a href="addCart?cart=${product.productId}">Add Cart</a></td>
 
 </tr>
 </core:forEach>

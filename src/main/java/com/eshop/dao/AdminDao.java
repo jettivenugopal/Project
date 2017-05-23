@@ -19,5 +19,6 @@ public class AdminDao {
 		Transaction t=session.beginTransaction();
 		session.save(ad);
 		t.commit();	
+		session.clear();
 	}
 }

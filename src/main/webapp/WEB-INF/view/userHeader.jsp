@@ -16,7 +16,7 @@
 <nav class="navbar navbar-inverse">
     <div class="container-fluid">
     <div class="navbar-header">
-    <a class="navbar-brand" style="color:#FFFFFF" href="#"><i><b>eBOOK STORE</b></i></a>
+    <a class="navbar-brand" style="color:#FFFFFF" href="#"><i><b>eBOOK STORE</b></i>  <span class="fa fa-book" style="font-size:24px;color:Gray" ></span></a>
     </div>
    
     

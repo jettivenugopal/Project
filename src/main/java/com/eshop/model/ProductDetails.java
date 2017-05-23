@@ -27,15 +27,9 @@ public class ProductDetails {
 	@Column(name = "ProductPrice")
 	private int productPrice;
 	
-	@Column(name = "CATEGORYID ")
-	private int catId;
+	@Column(name="ProductStock")
+	private int productStock;
 	
-	@Column(name = "SUPPLIERID ")
-	private int supId;
-	
-	@Transient
-	private MultipartFile pImage;
-
 	public int getProductId() {
 		return productId;
 	}
@@ -68,6 +62,14 @@ public class ProductDetails {
 		this.productPrice = productPrice;
 	}
 
+	public int getProductStock() {
+		return productStock;
+	}
+
+	public void setProductStock(int productStock) {
+		this.productStock = productStock;
+	}
+
 	public int getCatId() {
 		return catId;
 	}
@@ -92,6 +94,14 @@ public class ProductDetails {
 		this.pImage = pImage;
 	}
 
+	@Column(name = "CATEGORYID ")
+	private int catId;
+	
+	@Column(name = "SUPPLIERID ")
+	private int supId;
+	
+	@Transient
+	private MultipartFile pImage;
 
-
+	
 }

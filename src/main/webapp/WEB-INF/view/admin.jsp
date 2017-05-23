@@ -26,19 +26,19 @@
         <li><a href="product">UpdateProduct</a></li>
         <li><a href="product">DelateProduct</a></li></ul>
         
-       <!-- <title>Font Awesome Icons</title>
+      <!-- <title>Font Awesome Icons</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <i class="fa fa-list" style="font-size:24px"></i> -->
+          <i class="fa fa-list" style="font-size:24px"></i>--> 
          
-        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="category">CATEGORIES<span class="caret"></span></a>
+        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="category">CATEGORIES<span  class="caret"></span></a>
         <ul class="dropdown-menu">
         <li><a href="category">AddCategories</a></li>
         <li><a href="category">UpdateCategories</a></li>
         <li><a href="category">DelateCategories</a></li></ul>
       
   
-        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="supplier">SUPPLIER<span class="caret"></span></a>
+        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="supplier">SUPPLIER<span  class="caret"></span></a>
         <ul class="dropdown-menu">
         <li><a href="supplier">AddSupplier</a></li>
         <li><a href="supplier">UpdateSupplier</a></li>

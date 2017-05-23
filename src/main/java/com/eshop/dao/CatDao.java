@@ -24,6 +24,7 @@ public class CatDao {
 		Transaction t=session.beginTransaction();
 		session.saveOrUpdate( cd);
 		t.commit();
+		session.close();
     }
 	public  List prodcat()
 	{
@@ -32,6 +33,7 @@ public class CatDao {
 		String hql="from CategoryDetails ";
 		Query query = session.createQuery(hql);
 		List r = query.list(); 
+		session.close();
 		return r;	
 	}
 	
@@ -50,6 +52,7 @@ public class CatDao {
 		Session session=sessionFactory.openSession();
 		Transaction t=session.beginTransaction();
 		CategoryDetails c=(CategoryDetails)session.get(CategoryDetails.class,catid);
+		session.close();
 	    return c;
 	}
 }

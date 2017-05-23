@@ -34,6 +34,8 @@ public class ProductDao {
 		String hql="from ProductDetails ";
 		Query query = session.createQuery(hql);
 		List r = query.list(); 
+		t.commit();
+		session.close();
 		return r;	
 	}
 	public  void Deleteproduct(int productid)

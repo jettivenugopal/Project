@@ -20,6 +20,7 @@
 <th>Product name</th>
 <th>Supplier Id</th>
 <th>Category Id</th>
+<th>Stock</th>
 <th>Price</th>
 <th>Image</th>
 </tr> 
@@ -31,7 +32,9 @@
                 <td>${product.supId}</td>
                 <td> ${product.catId}</td>
                 <td> ${product.productPrice}</td>
+                <td>${product.productStock}</td>
                 <td><a href="image?img=${product.productId}">
+               
                 <img src="./resources/images/${product.productId}.jpg" height="50px" width="50px"/></a></td>
 
 </tr>

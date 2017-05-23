@@ -19,5 +19,6 @@ public class RegDao {
 		Transaction t=session.beginTransaction();
 		session.save(ud);
 		t.commit();	
+		session.close();
 	}
 }

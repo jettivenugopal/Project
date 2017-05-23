@@ -36,10 +36,18 @@
 				<form:textarea class="form-control" path="ProductDescription" />
 				</div>
 				</div>
+				
 		<div class="form-group">
 				<label class="col-md-4 control-label" for="comments" style="color:#FFFFFF">ProductPrice</label>
 				<div class="col-md-4">
 				<form:input class="form-control" path="ProductPrice" />
+				</div>
+				</div>
+				
+		<div class="form-group">
+				<label class="col-md-4 control-label" for="comments" style="color:#FFFFFF">ProductStack</label>
+				<div class="col-md-4">
+				<form:input class="form-control" path="productStock" />
 				</div>
 				</div>
 				
@@ -93,6 +101,7 @@
 <th>Supplier Id</th>
 <th>Category Id</th>
 <th>Price</th>
+<th>Stock</th>
 <th>Edit</th>
 <th>Delete</th>
 <th>Image</th>
@@ -103,8 +112,9 @@
                 <td>${product.productId}</td> 
                 <td>${product.productname}</td>
                 <td>${product.supId}</td>
-                <td> ${product.catId}</td>
-                <td> ${product.productPrice}</td>
+                <td>${product.catId}</td>
+                <td>${product.productPrice}</td>
+                <td>${product.productStock}</td>
                 <td><a href="updateprod?prodid=${product.productId}">Edit</a></td>
                 <td><a href="deleteprod?prodid=${product.productId}">Delete</a></td>
                 <td><img src="./resources/images/${product.productId}.jpg" height="50px" width="50px"/></td> 

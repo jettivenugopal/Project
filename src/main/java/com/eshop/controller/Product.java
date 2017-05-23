@@ -65,16 +65,18 @@ public class Product {
 	public ModelAndView product(@ModelAttribute("ProductDetails")ProductDetails p)
 	{
 		
-		pd.insertpro(p);
-		
+		pd.insertpro(p);	
 		ProductDetails p1=new ProductDetails();
 	    ModelAndView mv=new ModelAndView("pro","ProductDetails",p1);
+	    
 	    List l=cd.prodcat();
 		List l1=sd.prodsup();
 		List l2=pd.product();
+		
 	    mv.addObject("catData",l);
 		mv.addObject("supData",l1);
 		mv.addObject("prodData",l2);
+		
 		mv.addObject("bname","AddCategory");
 		String path="D:\\Project\\ekart\\src\\main\\webapp\\resources\\images\\";
 		path=path+String.valueOf(p.getProductId()+".jpg");
@@ -108,9 +110,11 @@ public class Product {
 		List l=cd.prodcat();
 		List l1=sd.prodsup();
 		List l2=pd.product();
+		
 	    mv.addObject("catData",l);
 		mv.addObject("supData",l1);
 		mv.addObject("prodData",l2);
+		
 		mv.addObject("bname","AddCategory");
 		System.out.println("delete Successfully");
 		return mv;
@@ -121,13 +125,16 @@ public class Product {
 	{		
 	   ProductDetails p=pd.getproduct(prodid);
 	   ModelAndView mv=new ModelAndView("pro","ProductDetails", p);
+	   
 	    List l=cd.prodcat();
 		List l1=sd.prodsup();
 		List l2=pd.product();
+		
 	    mv.addObject("catData",l);
 		mv.addObject("supData",l1);
 		mv.addObject("prodData",l2);
-	   mv.addObject("bname","UpdateCategory");
+		
+	    mv.addObject("bname","UpdateCategory");
 	   return mv;
 	}
 	@RequestMapping(value="/userpro", method=RequestMethod.GET)
@@ -144,11 +151,10 @@ public class Product {
 	public ModelAndView Image(@RequestParam("img")int productId)
 	{		
 	    ProductDetails p=pd.getproduct(productId);
-	    
 		List l=new ArrayList();
 		l.add(p);
 		ModelAndView mv=new ModelAndView("single","ProductDetails", l);
 	  
-	   return mv;
+	    return mv;
 	}
-}
+} 
