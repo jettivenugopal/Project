@@ -32,4 +32,18 @@ public class Admin {
 	    ModelAndView mv=new ModelAndView("admin","AdminDetails", a);
 	    return mv;
 	}
+	
+	@RequestMapping(value="/about", method=RequestMethod.GET)
+	public ModelAndView about()
+	{		
+	    ModelAndView mv=new ModelAndView("about");
+	    return mv;
+	}
+
+	@RequestMapping(value="/contact", method=RequestMethod.GET)
+	public ModelAndView contact()
+	{		
+	    ModelAndView mv=new ModelAndView("contact");
+	    return mv;
+	}
 }

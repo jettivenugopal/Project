@@ -9,6 +9,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.eshop.dao.RegDao;
 import com.eshop.model.CategoryDetails;
+import com.eshop.model.UserCredentials;
 import com.eshop.model.UserDetails;
 
 @Controller
@@ -34,8 +35,17 @@ public class Register {
 	public ModelAndView reg2(@ModelAttribute("UserDetails")UserDetails u)
 	{	
 	   //UserDetails u=new UserDetails();
-	   rd.insertuser(u);	
-	   ModelAndView mv=new ModelAndView("register1","UserDetails", u);
+	      rd.insertuser(u);	
+	      ModelAndView mv=new ModelAndView("register1","UserDetails", u);
+	      UserCredentials uc=new UserCredentials();
+		  uc.setUsername(u.getUsername());
+		  System.out.println("print name");
+		  uc.setPassword(u.getPassword());
+		  uc.setRole("ROLE_USER");
+		  uc.setEnabled(true);
+		  rd.insertUserCredentials(uc);
+		  
+		  
 	   return mv;
 	}
 

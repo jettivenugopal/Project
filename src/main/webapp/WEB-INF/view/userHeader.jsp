@@ -42,9 +42,15 @@
    <ul class="nav navbar-nav navbar-right">
        <li class="hidden-sm hidden-xs"></li>
              <li><a href="login" class="link-button-color"><span class="glyphicon glyphicon-log-in"></span> Log In</a></li>
+             <li><a href="perform_logout" class="link-button-color"><span class="glyphicon glyphicon-log-in"></span> Log Out</a></li>
              <li><a href="reg" class="link-button-color"><span class="glyphicon glyphicon-user"></span> Register</a></li>
+               <li><a href="about">About</a></li>
+               <li><a href="contact">Contact Us</a></li>
              </ul>
             </div>
            </nav>
+           
+
 </body>
+
 </html>

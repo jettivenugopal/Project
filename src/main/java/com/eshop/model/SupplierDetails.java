@@ -2,6 +2,7 @@ package com.eshop.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -11,8 +12,8 @@ import org.springframework.stereotype.Component;
 @Table
 @Component
 public class SupplierDetails {
-@Id
-	
+    @Id
+    @GeneratedValue
 	@Column(name = "SupplierId")
 	private int supplierId;
 

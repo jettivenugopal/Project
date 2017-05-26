@@ -10,38 +10,39 @@
 </head>
 <body>
 <%@ include file="userHeader.jsp" %>
-<form:form class="form-horizontal" method="post" action="pro"	commandName="ProductDetails" enctype="multipart/form-data" >
+
 <center>
 <h1 style="color:#FFFFFF">Product Details</h1>
 </center>
 <fieldset>
 <table class="table table-bordered table-hover table-striped">
-<tr><th>Product Id</th>
+<tr><th>Image</th>
+
 <th>Product name</th>
-<th>Supplier Id</th>
-<th>Category Id</th>
+<th>Product Description</th>
 <th>Price</th>
 <th>Stock</th>
-<th>Image</th>
+
 <th>Add Cart</th>
 </tr> 
 <core:forEach items="${ProductDetails}" var="product">
 <tr class="success" >
 
-                <td>${product.productId}</td> 
+                <td><img src="./resources/images/${product.productId}.jpg" style="height: 300px; width:350px"/></td>
+                
+                
+                
                 <td>${product.productname}</td>
-                <td>${product.supId}</td>
-                <td> ${product.catId}</td>
+                <th>${product.productDescription}</th>
                 <td> ${product.productPrice}</td>
                 <td>${product.productStock}</td>
-                <td><img src="./resources/images/${product.productId}.jpg" height="200px" width="150px"/></td>
-                <td><a href="addCart?cart=${product.productId}">Add Cart</a></td>
+                <input type="hidden" name="adpid" value=${product.productId }/>Quantity<input type="text" name="d" value="" />
+                <td><a href="addCart?cart=${product.productId}"><button>Add Cart</button></a></td>
 
 </tr>
 </core:forEach>
 </table>
-
 </fieldset>
-</form:form>
+<%@ include file="footer.jsp" %>
 </body>
 </html>

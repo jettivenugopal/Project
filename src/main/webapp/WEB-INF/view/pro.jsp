@@ -122,6 +122,6 @@
 </tr>
 </core:forEach>
 </table>
-
+<%@ include file="footer.jsp" %>
 </body>
 </html>

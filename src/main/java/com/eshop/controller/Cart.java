@@ -12,6 +12,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.eshop.dao.CartDao;
 import com.eshop.dao.CatDao;
 import com.eshop.dao.ProductDao;
+import com.eshop.dao.RegDao;
 import com.eshop.dao.SupDao;
 import com.eshop.model.CartDetails;
 import com.eshop.model.ProductDetails;
@@ -22,6 +23,8 @@ public class Cart {
 	CartDao cde;
 	@Autowired
 	ProductDao pd;
+	@Autowired
+	RegDao rd;
 	
 	@RequestMapping(value="/addCart", method=RequestMethod.GET)
 	public ModelAndView addcart(@RequestParam("cart")int productId)
@@ -35,7 +38,7 @@ public class Cart {
 		c.setProPrice(p.getProductPrice());
 		c.setTotalPrice(c.getTotalPrice()*1);
 		cde.getcart(c);
-		
+	
 		List l=cde.retrieveCart();
 		
     ModelAndView mv= new ModelAndView("cart","CartData",l);

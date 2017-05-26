@@ -12,7 +12,7 @@
 <form:form class="form-horizontal" method="post" action="register"	commandName="UserDetails" >
 <center>
 <h1 style="color:#FFFFFF">Registration Form</h1>
-</center>
+</center> 
 <fieldset>
 	
 		<div class="form-group">
@@ -26,7 +26,7 @@
 	    <div class="form-group">
 				<label class="col-md-4 control-label" for="comments" style="color:#FFFFFF">UserName</label>
 				<div class="col-md-4">
-				<form:textarea class="form-control" path="userName" />
+				<form:textarea class="form-control" path="username" />
 				</div>
 				</div>
 				
@@ -69,6 +69,6 @@
 
    </fieldset>
 </form:form>
-
+<%@ include file="footer.jsp" %>
 </body>
 </html>

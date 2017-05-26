@@ -18,6 +18,7 @@
 <table class="table table-bordered table-hover table-striped">
 <tr><th>Product Id</th>
 <th>Product name</th>
+<th>Product Description</th>
 <th>Supplier Id</th>
 <th>Category Id</th>
 <th>Stock</th>
@@ -29,6 +30,7 @@
 
                 <td>${product.productId}</td> 
                 <td>${product.productname}</td>
+                <th>${product.productDescription}</th>
                 <td>${product.supId}</td>
                 <td> ${product.catId}</td>
                 <td> ${product.productPrice}</td>
@@ -43,5 +45,6 @@
 
 </fieldset>
 </form:form>
+<%@ include file="footer.jsp" %>
 </body>
 </html>

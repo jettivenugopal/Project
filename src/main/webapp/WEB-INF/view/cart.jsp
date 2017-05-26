@@ -12,6 +12,7 @@
 <%@ include file="userHeader.jsp" %>
 <table class="table table-bordered table-hover table-striped">
 <tr><th>Cart Id</th>
+<th>Cart User</th>
 <th>Product Id</th>
 <th>Product Name</th>
 <th>Product Price</th>
@@ -30,6 +31,7 @@
                 <td><img src="./resources/images/${cart.proId}.jpg" height="200px" width="150px"/></td>
 
 </tr>
-</core:forEach> 
+</core:forEach>
+<%@ include file="footer.jsp" %> 
 </body>
 </html>
